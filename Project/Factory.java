@@ -1,6 +1,7 @@
 package Project;
 
- abstract class Cattle {
+// Abstract class for all cattle types
+abstract class Cattle {
     protected String id;
     protected Integer distanceToFarm;
     protected boolean hasVaccinated;
@@ -14,20 +15,23 @@ package Project;
     public String getId() {
         return id;
     }
+
     public int getDistanceToFarm() {
         return distanceToFarm;
     }
+
     public boolean hasVaccinated() {
         return hasVaccinated;
     }
 
+    // Subclasses will define how the cattle is fed
     public abstract void feed();
 }
- class DairyCattle extends Cattle {
 
+// Concrete class for dairy cattle
+class DairyCattle extends Cattle {
     public DairyCattle(String id) {
         super(id);
-        hasVaccinated = false;
     }
 
     @Override
@@ -35,11 +39,11 @@ package Project;
         System.out.println("Feeding Dairy Cattle " + id + " with corn (carbs) and soybean (protein).");
     }
 }
-class BeefCattle extends Cattle {
 
+// Concrete class for beef cattle
+class BeefCattle extends Cattle {
     public BeefCattle(String id) {
         super(id);
-        hasVaccinated = false;
     }
 
     @Override
@@ -47,18 +51,23 @@ class BeefCattle extends Cattle {
         System.out.println("Feeding Beef Cattle " + id + " with wheat (carbs) and canola (protein).");
     }
 }
+
+// Factory base class
 abstract class CattleFactory {
+    // Subclasses will implement how to create cattle
     public abstract Cattle createCattle(String id);
 }
-class DairyCattleFactory extends CattleFactory {
 
+// Factory for dairy cattle
+class DairyCattleFactory extends CattleFactory {
     @Override
     public Cattle createCattle(String id) {
         return new DairyCattle(id);
     }
 }
-class BeefCattleFactory extends CattleFactory {
 
+// Factory for beef cattle
+class BeefCattleFactory extends CattleFactory {
     @Override
     public Cattle createCattle(String id) {
         return new BeefCattle(id);
