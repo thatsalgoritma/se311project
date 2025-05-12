@@ -1,3 +1,7 @@
+//Özlem Nur Nazlıoğlu
+//Murat Vermez 
+//Murat Göçmen
+//Mehmet Kağan Kaça
 package Project;
 
 public class Main {
