@@ -1,7 +1,7 @@
-//Özlem Nur Nazlıoğlu
-//Murat Vermez 
-//Murat Göçmen
-//Mehmet Kağan Kaça
+//Özlem Nur Nazlıoğlu 20210601043
+//Murat Vermez 20200601057
+//Murat Göçmen 20210601026
+//Mehmet Kağan Kaça 20200601030
 package Project;
 
 public class Main {
